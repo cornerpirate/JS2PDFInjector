@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package js2pdfinjector;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.File;
 import java.io.FileFilter;
 import java.util.Scanner;
@@ -19,8 +10,12 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.interactive.action.type.PDActionJavaScript;
 
 /**
- *
- * @author pritchie
+ * This class behaves as follows:
+ * 1) File Open Prompt to select PDF file to embed JS into.
+ * 2) File Open Prompt to select .js file to embed.
+ * 3) Prompt displaying successful execution or error message.
+ * 
+ * @author cornerpirate
  */
 public class JS2PDFInjector {
 
@@ -52,6 +47,8 @@ public class JS2PDFInjector {
 
             filter = new FileNameExtensionFilter("JavaScript File", "js");
             fileChooser.setFileFilter(filter);
+            // clear PDF file from selected.
+            fileChooser.setSelectedFile(new File(""));
 
             File js_in = null;
             returnVal = fileChooser.showOpenDialog(null);
