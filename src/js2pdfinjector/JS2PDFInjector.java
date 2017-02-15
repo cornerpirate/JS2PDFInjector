@@ -38,7 +38,7 @@ public class JS2PDFInjector {
                 System.exit(-1);
             }
 
-            String output_name = pdf_in.getParent() + "\\js_injected_" + pdf_in.getName();
+            String output_name = pdf_in.getParent() + File.separator + "js_injected_" + pdf_in.getName();
             System.out.println("output_name: " + output_name);
             File js_injected_pdf = new File(output_name);
 
@@ -61,7 +61,7 @@ public class JS2PDFInjector {
 
             System.out.println("File Opened: " + js_in);
 
-            String content = new Scanner(js_in).useDelimiter("\\Z").next();
+            String content = new Scanner(js_in).useDelimiter( File.separator + "Z").next();
 
             PDActionJavaScript javascript = new PDActionJavaScript(content);
 
