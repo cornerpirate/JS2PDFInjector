@@ -35,6 +35,7 @@ Follow the steps below to create your PDF:
 ## How to use JS2PDFInjector to Test your Email or Internet filtering
 
 For more information please see the blog post by the author:
+
 https://cornerpirate.com/2017/02/10/js2pdfinjector-javascript-for-your-pdf/
 
 
