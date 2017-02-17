@@ -32,4 +32,9 @@ Follow the steps below to create your PDF:
 * Select that file.
 * This will create a new file in the same directory as the PDF with "js_injected_" prepended in the name.
 
+## How to use JS2PDFInjector to Test your Email or Internet filtering
+
+For more information please see the blog post by the author:
+https://cornerpirate.com/2017/02/10/js2pdfinjector-javascript-for-your-pdf/
+
 
