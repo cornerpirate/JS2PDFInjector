@@ -26,10 +26,36 @@ A little different from just "alert". Your alert method now lives attached to th
 Follow the steps below to create your PDF:
 
 * Execute the jar in the "dist" folder. 
-* This will open a GUI prompt that asks you to point it at a PDF file. 
+* If no command line arguments are provided "usage" instructions will be provided 
+* Then it will open a GUI prompt that asks you to point it at a PDF file. 
 * Select the PDF file you would like to inject in to.
 * Another prompt will appear looking for the file containing your JavaScript.
 * Select that file.
 * This will create a new file in the same directory as the PDF with "js_injected_" prepended in the name.
 
+To automate the process via the command line the following shows the new usage:
 
+```java -jar JS2PDFInjector.jar <PDF FILE> <JS FILE>```
+
+This does no checking that the files you provide exist so don't run with scissors.
+
+If you need to inject one JS file into multiple PDF files then you can do so with a for loop. For bash that is shown below:
+
+```for pdf in `ls *.pdf`
+do;
+java -jar JS2PDFInjector.jar $pdf /path/to/javascript.js
+done;```
+
+I have not spent time on crafting the interface. That should work.
+
+## How to use JS2PDFInjector to Test your Email or Internet filtering
+
+For more information please see the blog post by the author:
+
+https://cornerpirate.com/2017/02/10/js2pdfinjector-javascript-for-your-pdf/
+
+The blog post is no outdated and shows only the GUI usage path.
+
+## Dislaimer
+
+For research purposes only, do not use this on any target which you do not have permission to do so.
