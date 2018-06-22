@@ -33,16 +33,7 @@ Follow the steps below to create your PDF:
 * Select that file.
 * This will create a new file in the same directory as the PDF with "js_injected_" prepended in the name.
 
-<<<<<<< HEAD
 To automate the process via the command line the following shows the new usage:
-=======
-## How to use JS2PDFInjector to Test your Email or Internet filtering
-
-For more information please see the blog post by the author:
-
-https://cornerpirate.com/2017/02/10/js2pdfinjector-javascript-for-your-pdf/
-
->>>>>>> b98735c55e5cb44ed4346dd482d9b01260ca72d7
 
 ```java -jar JS2PDFInjector.jar <PDF FILE> <JS FILE>```
 
@@ -50,7 +41,7 @@ This does no checking that the files you provide exist so don't run with scissor
 
 If you need to inject one JS file into multiple PDF files then you can do so with a for loop. For bash that is shown below:
 
-```for pdf in /path/to/folder/*.pdf
+```for pdf in /path/to/pdfs/*.pdf
 do;
 java -jar JS2PDFInjector.jar $pdf /path/to/javascript.js
 done;```
