@@ -81,13 +81,11 @@ public class JS2PDFInjector {
         try {
 
             String output_name = pdf_in.getParent() + File.separator + "js_injected_" + pdf_in.getName();
-            System.out.println("output_name: " + output_name);
             File js_injected_pdf = new File(output_name);
 
             PDDocument document = PDDocument.load(pdf_in);
-            System.out.println("File Opened: " + pdf_in);
-
-            System.out.println("File Opened: " + js_in);
+            System.out.println("[*] Original PDF: " + pdf_in);
+            System.out.println("[*] JavaScript Payload: " + js_in);
 
             String content = new Scanner(js_in).useDelimiter(File.separator + "Z").next();
 
@@ -95,10 +93,13 @@ public class JS2PDFInjector {
 
             document.getDocumentCatalog().setOpenAction(javascript);
             document.save(js_injected_pdf);
-
-            System.out.println("File Saved: " + js_injected_pdf);
-
-            JOptionPane.showMessageDialog(null, "Sucessfully injected at: " + js_injected_pdf);
+            
+            System.out.println("[*] Poisoned File Created: " + js_injected_pdf);
+            
+            // This user is doing it the GUI way so GUI them a message
+            if (args.length == 2) {
+                JOptionPane.showMessageDialog(null, "Sucessfully injected at: " + js_injected_pdf);
+            } 
 
         } catch (Exception ex) {
             ex.printStackTrace();
