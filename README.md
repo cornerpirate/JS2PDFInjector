@@ -41,12 +41,14 @@ This does no checking that the files you provide exist so don't run with scissor
 
 If you need to inject one JS file into multiple PDF files then you can do so with a for loop. For bash that is shown below:
 
-```for pdf in /path/to/pdfs/*.pdf
+```
+for pdf in /path/to/pdfs/*.pdf
 do;
 java -jar JS2PDFInjector.jar $pdf /path/to/javascript.js
-done;```
+done;
+```
 
-I have not spent time on crafting the interface. That should work.
+I have not spent time on crafting the interface. But this should work.
 
 ## How to use JS2PDFInjector to Test your Email or Internet filtering
 
