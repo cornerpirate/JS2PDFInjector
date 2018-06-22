@@ -50,7 +50,7 @@ This does no checking that the files you provide exist so don't run with scissor
 
 If you need to inject one JS file into multiple PDF files then you can do so with a for loop. For bash that is shown below:
 
-```for pdf in `ls *.pdf`
+```for pdf in /path/to/folder/*.pdf
 do;
 java -jar JS2PDFInjector.jar $pdf /path/to/javascript.js
 done;```
