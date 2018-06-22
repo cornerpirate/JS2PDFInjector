@@ -97,7 +97,7 @@ public class JS2PDFInjector {
             System.out.println("[*] Poisoned File Created: " + js_injected_pdf);
             
             // This user is doing it the GUI way so GUI them a message
-            if (args.length == 2) {
+            if (args.length != 2) {
                 JOptionPane.showMessageDialog(null, "Sucessfully injected at: " + js_injected_pdf);
             } 
 
