@@ -97,6 +97,7 @@ public class JS2PDFInjector {
             PDDocument document = PDDocument.load(pdf_in);
             System.out.println("[*] Original PDF: " + pdf_in);
             System.out.println("[*] JavaScript Payload: " + js_in);
+            System.out.println("[*] Output File Path: " + js_injected_pdf);
 
             String content = new Scanner(js_in).useDelimiter(File.separator + "Z").next();
 
