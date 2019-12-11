@@ -25,7 +25,7 @@ A little different from just "alert". Your alert method now lives attached to th
 
 Follow the steps below to create your PDF:
 
-* Execute the jar in the "target" folder. 
+* Execute the jar file. 
 * If no command line arguments are provided "usage" instructions will be provided 
 * Then it will open a GUI prompt that asks you to point it at a PDF file. 
 * Select the PDF file you would like to inject in to.
@@ -49,6 +49,38 @@ done;
 ```
 
 I have not spent time on crafting the interface. But this should work.
+
+## Common Error ##
+
+When running in headless mode if you see a FileNotFoundException like this:
+
+```
+[*] Original PDF: dummy.pdf
+[*] JavaScript Payload: test.js
+[*] Output File Path: null/js_injected_dummy.pdf
+java.io.FileNotFoundException: null/js_injected_dummy.pdf (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:299)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:238)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:188)
+	at org.apache.pdfbox.pdmodel.PDDocument.save(PDDocument.java:1305)
+	at com.cornerpirate.js2pdfinjector.JS2PDFInjector.main(JS2PDFInjector.java:107)
+```
+
+It means you used relative paths to the files. Please supply the absolute path as command line arguments. 
+So instead of this command:
+
+```
+java -jar JS2PDFInjector.jar dummy.pdf test.js
+```
+
+You should use absolute paths like this:
+
+```
+java -jar JS2PDFInjector.jar /tmp/dummy.pdf /tmp/test.js
+```
+
+Full paths for the win.
 
 ## How to use JS2PDFInjector to Test your Email or Internet filtering
 
