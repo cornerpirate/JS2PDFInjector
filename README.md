@@ -25,7 +25,7 @@ A little different from just "alert". Your alert method now lives attached to th
 
 Follow the steps below to create your PDF:
 
-* Execute the jar in the "dist" folder. 
+* Execute the jar in the "target" folder. 
 * If no command line arguments are provided "usage" instructions will be provided 
 * Then it will open a GUI prompt that asks you to point it at a PDF file. 
 * Select the PDF file you would like to inject in to.
